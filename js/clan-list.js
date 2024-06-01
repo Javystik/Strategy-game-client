@@ -109,5 +109,5 @@ function getToken() {
 }
 
 function redirectToClanProfile(clanId) {
-  window.location.href = `/html/clan-profile.html?id=${clanId}`;
+  window.location.href = `../html/clan-profile.html?id=${clanId}`;
 }
