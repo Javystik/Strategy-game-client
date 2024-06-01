@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="../style/registration-style.css">
+</head>
+<body>
+    <div class="form">
+        <div class="title">Let's create your account!</div>
+
+        <div class="input-container ic1">
+            <input placeholder="" type="text" class="input" id="username">
+            <div class="cut"></div>
+            <label class="iLabel" for="username" id="loginLabel">Login</label>
+        </div>        
+
+        <div class="input-container ic2">
+            <input placeholder="" type="text" class="input" id="password">
+            <div class="cut"></div>
+            <label class="iLabel" for="password" id="passwordLabel">Password</label>
+        </div>
+        <div class="input-container ic2">
+            <input placeholder="" type="text" class="input" id="email">
+            <div class="cut cut-short"></div>
+            <label class="iLabel" for="email" id="emailLabel">Email</label>
+        </div>
+        <button class="submit" type="button" id="submitButton" onclick="register()">Submit</button>
+    </div>
+    
+    <script src="../js/registration.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+.avatar-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-right: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.avatar-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-details {
+    text-align: left;
+    flex-grow: 1;
+}
+
+.user-details h2 {
+    margin: 10px 0;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.user-details p {
+    margin: 5px 0;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.overlay:hover {
+    opacity: 1;
+}
+
+.upload-btn {
+    background-color: #fff;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.upload-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+    align-items: flex-end;
+}
+
+.stats-summary {
+    text-align: left;
+    margin-right: 20px;
+}
+
+.stats-summary p {
+    margin: 5px;
+}

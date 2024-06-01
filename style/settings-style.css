@@ -1,0 +1,169 @@
+.settings-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    max-width: 400px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    animation: modalFadeIn 0.3s ease forwards; /* Анімація для появи */
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.settings-modal-content {
+    text-align: center;
+    animation: slideIn 0.3s ease forwards; /* Анімація для контенту */
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.settings-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.settings-close:hover {
+    opacity: 1;
+}
+
+.settings-setting {
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards; /* Анімація для налаштувань */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.settings-label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.settings-select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+.settings-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.settings-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.settings-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.settings-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.settings-select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+#verification-input-1,
+#verification-input-2,
+#verification-input-3,
+#verification-input-4,
+#verification-input-5,
+#verification-input-6 {
+    font-size: 14px;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    text-align: center;
+}
+
+.verification-input {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-right: 5px;
+    text-align: center;
+}
+
+.modal-open {
+    overflow: hidden;
+}
+
+.modal-open::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+    animation: fadeInBackground 0.3s ease forwards; /* Анімація для фону */
+}
+
+@keyframes fadeInBackground {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

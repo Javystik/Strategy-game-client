@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/main-style.css">
+    <link rel="stylesheet" href="../style/clan-profile.css">
+    <script src="../js/check-authentication.js"></script>
+
+    <title>Clan profile</title>
+</head>
+<body>
+    <header>
+        <img src="../images/logo.png" alt="Логотип">
+
+        <div id="header-icons">
+            <img src="../images/settings.png">
+            <img src="../images/mail.png">
+            <a href="player-info-page.html">
+                <img src="../images/user.png">
+            </a>
+        </div>
+    </header>
+
+    <div>
+        <div class="container">
+            <a href="../html/main-page.html">
+                <button class="word">Ігри</button>
+            </a>
+            <a href="../html/rating-page.html">
+                <button class="word">Рейтинг</button>
+            </a>
+            <a href="../html/clan-list.html">
+                <button class="word">Альянс</button>
+            </a>
+            <a href="../html/news-page.html">
+                <button class="word">Новини</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <button class="word" style="font-size: 1.52rem; display: block; margin: 0 auto;" id="joinClan">Приєднатись</button>
+    </div>
+
+    <div class="container">
+        <div class="avatar-container">
+            <img id="clan-avatar">
+            <div class="overlay">
+                <button class="upload-btn" id="upload-avatar-btn">Завантажити</button>
+            </div>
+        </div>
+        <div class="clan-details">
+            <h2>Clan name</h2>
+            <p>Clan id</p>
+            <p>Участників: </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="stats-summary">
+            <p style="font-size: 18px;">Виграно ігор: <span id="gamesWon">0</span></p>
+            <p style="font-size: 18px;">Програно ігор: <span id="gamesLost">0</span></p>
+            <p style="font-size: 18px;">З'їдено кліток: <span id="cellsEaten">0</span></p>
+            <p style="font-size: 18px;">Захвачено територій: <span id="territoriesCaptured">0</span></p>
+            <p style="font-size: 18px;">Програно територій: <span id="territoriesLost">0</span></p>
+        </div>
+    </div>
+    
+    <div class="container rating-container">
+        <table id="ratingTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Avatar</th>
+                    <th>Name</th>
+                    <th>Role</th>
+                    <th>Wins</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="../js/clan-profile.js"></script>
+
+
+    
+    <div id="settingsModal" class="settings-modal">
+        <div class="settings-modal-content">
+            <span class="settings-close" id="settings-close">&times;</span>
+            <h2>Налаштування</h2>
+            <div class="settings-setting">
+                <label for="passwordInput">Пароль:</label>
+                <input type="text" id="passwordInput" class="settings-input" placeholder="Введіть ваш новий пароль">
+            </div>
+            <div class="settings-setting">
+                <label for="emailInput">Електронна пошта:</label>
+                <input type="email" id="emailInput" class="settings-input" placeholder="Введіть вашу нову електронну пошту">
+            </div>
+            <div class="settings-setting">
+                <label>
+                    <input type="checkbox" id="musicToggle">
+                    Включити / виключити музику
+                </label>
+            </div>
+            <div class="settings-setting">
+                <button id="updateProfileBtn" class="settings-button">Оновити дані профіля</button>
+                <button id="logoutBtn" class="settings-button">Вийти з аккаунту</button>
+            </div>
+            <div class="settings-setting">
+                <h3>Генерація фейк користувачів</h3>
+                <label for="fakeUsersCount">Кількість:</label>
+                <input type="number" id="fakeUsersCount" class="settings-input" placeholder="Введіть кількість...">
+                <div>  
+                    <button id="generateFakeUsersBtn" class="settings-button">Генерувати</button>
+                </div>
+            </div>
+            <div>
+                <h3>Верифікація аккаунту</h3>
+                <div class="container">
+                    <input type="text" maxlength="1" class="verification-input" id="verification-input-1">
+                    <input type="text" maxlength="1" class="verification-input" id="verification-input-2">
+                    <input type="text" maxlength="1" class="verification-input" id="verification-input-3">
+                    <input type="text" maxlength="1" class="verification-input" id="verification-input-4">
+                    <input type="text" maxlength="1" class="verification-input" id="verification-input-5">
+                    <input type="text" maxlength="1" class="verification-input" id="verification-input-6">
+                </div>
+                <div>
+                    <button id="verificationButton" class="settings-button">Верифікація</button>
+                    <button id="newVerificationCodeButton" class="settings-button">Надіслати лист</button>
+                </div>
+            </div>
+        </div>
+    </div>
+      <script src="../js/settings.js"></script>
+      <link rel="stylesheet" href="../style/settings-style.css">
+</body>
+</html>

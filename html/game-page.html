@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../style/game.css">
+    <script src="../js/check-authentication.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.1/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <title>Strategy Game</title>
+</head>
+<body>
+    <button id="openUnitModal" class="open-unit-modal-button">Створити юніта</button>
+    <button id="goToQueenButton" class="go-to-queen-button">Перейти до королеви</button>
+
+    <header>
+        <div id="resourceContainer">
+            <img src="../images/millitare-helmet.png" width="30px" height="30px">
+            <span id="resourceValue"></span>
+          </div>
+          
+        <img src="../images/logo.png" alt="Логотип">
+
+        <div id="header-icons">
+            <img src="../images/settings.png">
+            <img src="../images/mail.png">
+            <a href="player-info-page.html">
+                <img src="../images/user.png">
+            </a>
+        </div>
+    </header>
+    <div id="grid"></div>
+    <script src="../js/game.js"></script>
+    <div id="mini-map"></div>
+
+    <div id="icon-container" style="display: none;">
+        <img id="icon-attack" src="../images/icon-attack.png" alt="Attack Icon">
+        <img id="icon-movement" src="../images/icon-movement.png" alt="Movement Icon">
+    </div>
+
+    <div id="chat-container">
+        <div id="message-area"></div>
+        <form id="input-container">
+            <input type="text" id="message-input" placeholder="Введіть повідомлення...">
+            <input type="submit" value="Відправити">
+        </form>
+    </div>
+    
+
+
+    <div id="unitModal" class="unit-modal-unique modal">
+        <div class="unit-modal-content-unique modal-content">
+            <span class="unit-close-unique close" id="unitModalClose">&times;</span>
+            <h2>Створення юніта</h2>
+            <table id="existingUnitsTable" class="existing-units-table">
+                <thead>
+                    <tr>
+                        <th>Назва</th>
+                        <th>Ціна</th>
+                        <th>Здоров'я</th>
+                        <th>Перезарядка</th>
+                        <th>Урон</th>
+                        <th>Швидкість</th>
+                        <th>Дальність атаки</th>
+                        <th>Створити</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    
+
+    <div id="settingsModal" class="settings-modal">
+        <div class="settings-modal-content">
+            <span class="settings-close" id="settings-close">&times;</span>
+            <h2>Налаштування</h2>
+            <div class="settings-setting">
+                <label for="passwordInput">Пароль:</label>
+                <input type="text" id="passwordInput" class="settings-input" placeholder="Введіть ваш новий пароль">
+            </div>
+            <div class="settings-setting">
+                <label for="emailInput">Електронна пошта:</label>
+                <input type="email" id="emailInput" class="settings-input" placeholder="Введіть вашу нову електронну пошту">
+            </div>
+            <div class="settings-setting">
+                <label>
+                    <input type="checkbox" id="musicToggle">
+                    Включити / виключити музику
+                </label>
+            </div>
+            <div class="settings-setting">
+                <button id="updateProfileBtn" class="settings-button">Оновити дані профіля</button>
+                <button id="logoutBtn" class="settings-button">Вийти з аккаунту</button>
+            </div>
+            <div class="settings-setting">
+                <h3>Генерація фейк користувачів</h3>
+                <label for="fakeUsersCount">Кількість:</label>
+                <input type="number" id="fakeUsersCount" class="settings-input" placeholder="Введіть кількість...">
+                <div>  
+                    <button id="generateFakeUsersBtn" class="settings-button">Генерувати</button>
+                </div>
+            </div>
+            <div>
+                <h3>Верифікація аккаунту</h3>
+                <div class="container">
+                    <input type="text" maxlength="1" class="verification-input" id="verification-input-1">
+                    <input type="text" maxlength="1" class="verification-input" id="verification-input-2">
+                    <input type="text" maxlength="1" class="verification-input" id="verification-input-3">
+                    <input type="text" maxlength="1" class="verification-input" id="verification-input-4">
+                    <input type="text" maxlength="1" class="verification-input" id="verification-input-5">
+                    <input type="text" maxlength="1" class="verification-input" id="verification-input-6">
+                </div>
+                <div>
+                    <button id="verificationButton" class="settings-button">Верифікація</button>
+                    <button id="newVerificationCodeButton" class="settings-button">Надіслати лист</button>
+                </div>
+            </div>
+        </div>
+    </div>
+      <script src="../js/settings.js"></script>
+      <script src="../js/game-chat.js"></script>
+      <link rel="stylesheet" href="../style/settings-style.css">
+</body>
+</html>

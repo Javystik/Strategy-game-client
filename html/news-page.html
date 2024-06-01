@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/main-style.css">
+    <link rel="stylesheet" href="../style/news-page.css">
+    <script src="../js/check-authentication.js"></script>
+    <script src="../js/news.js"></script>
+    <title>News page</title>
+</head>
+<body>
+    <header>
+        <img src="../images/logo.png" alt="Логотип">
+
+        <div id="header-icons">
+            <img src="../images/settings.png">
+            <img src="../images/mail.png">
+            <a href="player-info-page.html">
+                <img src="../images/user.png">
+            </a>
+        </div>
+    </header>
+
+    <div>
+        <div class="container">
+            <a href="../html/main-page.html">
+                <button class="word">Ігри</button>
+            </a>
+            <a href="../html/rating-page.html">
+                <button class="word">Рейтинг</button>
+            </a>
+            <a href="../html/clan-list.html">
+                <button class="word">Альянс</button>
+            </a>
+            <a href="../html/news-page.html">
+                <button class="word">Новини</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+      <button id="createNews" class="word" style="font-size: 1.52rem" style="display: block; margin: 0 auto;">Створити новину</button>
+      <button id="editNews" class="word" style="font-size: 1.52rem" style="display: block; margin: 0 auto;">Редагувати новину</button>
+      <button id="deleteNews" class="word" style="font-size: 1.52rem" style="display: block; margin: 0 auto;">Видалити новину</button>
+    </div>
+
+
+
+    <div id="createNewsModal" class="settings-modal">
+      <div class="settings-modal-content">
+        <span class="settings-close" id="createNews-close">&times;</span>
+        <h2 style="margin-bottom: 20px;">Створити новину</h2>
+        <form>
+          <div class="modal-input">
+            <label for="newsTitleInput" class="settings-label">Заголовок:</label>
+            <input type="text" id="newsTitleInput" name="newsTitle" required class="settings-input" placeholder="Введіть заголовок">
+          </div>
+          <div class="modal-input">
+            <label for="newsImageInput" class="settings-label">Зображення:</label>
+            <input type="file" id="newsImageInput" name="newsImage" accept="image/*" class="settings-input">
+          </div>
+          <div class="modal-input">
+            <label for="newsDescriptionInput" class="settings-label">Опис:</label>
+            <textarea id="newsDescriptionInput" name="newsDescription" rows="5" required class="settings-input" placeholder="Введіть опис"></textarea>
+          </div>
+          <button type="submit" id="createNewsSubmitBtn" class="settings-button">Створити</button>
+        </form>
+      </div>
+    </div>
+    
+
+    <script src="../js/create-news.js"></script>
+
+
+    <div id="editNewsModal" class="settings-modal">
+      <div class="settings-modal-content">
+        <span class="settings-close" id="editNews-close">&times;</span>
+        <h2>Редагувати новину</h2>
+        <form>
+          <div class="modal-input">
+            <label for="editNewsTitleInput" class="settings-label">Назва статті:</label>
+            <input type="text" id="editNewsTitleInput" name="editNewsTitle" required class="settings-input">
+          </div>
+          <div class="modal-input">
+            <label for="editNewsImageInput" class="settings-label">Зображення:</label>
+            <input type="file" id="editNewsImageInput" name="editNewsImage" accept="image/*" class="settings-input">
+          </div>
+          <div class="modal-input">
+            <label for="editNewsDescriptionInput" class="settings-label">Опис:</label>
+            <textarea id="editNewsDescriptionInput" name="editNewsDescription" rows="5" required class="settings-input"></textarea>
+          </div>
+          <button type="submit" id="editNewsSubmitBtn" class="settings-button">Зберегти</button>
+        </form>
+      </div>
+    </div>
+    
+    
+    <script src="../js/edit-new.js"></script>
+
+    
+
+    <div id="deleteNewsModal" class="settings-modal">
+      <div class="settings-modal-content">
+          <span class="settings-close"  id="deleteNews-close">&times;</span>
+          <h2 style="font-size: 1.5rem; margin-bottom: 20px;">Видалити новину</h2>
+          <form>
+              <div class="modal-input" style="margin-bottom: 20px;">
+                  <label for="newsTitleToDeleteInput" class="settings-label">Заголовок:</label>
+                  <input type="text" id="newsTitleToDeleteInput" name="newsTitleToDelete" placeholder="Введіть назву своє статті для видалення" required class="settings-input" style="width: calc(100% - 20px); padding: 10px; font-size: 1rem;">
+              </div>
+              <button type="submit" id="deleteNewsSubmitBtn" class="settings-button">Видалити</button>
+          </form>
+      </div>
+  </div>
+  
+    
+    <script src="../js/delete-news.js"></script>
+
+
+    <div id="settingsModal" class="settings-modal">
+      <div class="settings-modal-content">
+          <span class="settings-close" id="settings-close">&times;</span>
+          <h2>Налаштування</h2>
+          <div class="settings-setting">
+              <label for="passwordInput">Пароль:</label>
+              <input type="text" id="passwordInput" class="settings-input" placeholder="Введіть ваш новий пароль">
+          </div>
+          <div class="settings-setting">
+              <label for="emailInput">Електронна пошта:</label>
+              <input type="email" id="emailInput" class="settings-input" placeholder="Введіть вашу нову електронну пошту">
+          </div>
+          <div class="settings-setting">
+              <label>
+                  <input type="checkbox" id="musicToggle">
+                  Включити / виключити музику
+              </label>
+          </div>
+          <div class="settings-setting">
+              <button id="updateProfileBtn" class="settings-button">Оновити дані профіля</button>
+              <button id="logoutBtn" class="settings-button">Вийти з аккаунту</button>
+          </div>
+          <div class="settings-setting">
+              <h3>Генерація фейк користувачів</h3>
+              <label for="fakeUsersCount">Кількість:</label>
+              <input type="number" id="fakeUsersCount" class="settings-input" placeholder="Введіть кількість...">
+              <div>  
+                  <button id="generateFakeUsersBtn" class="settings-button">Генерувати</button>
+              </div>
+          </div>
+          <div>
+              <h3>Верифікація аккаунту</h3>
+              <div class="container">
+                  <input type="text" maxlength="1" class="verification-input" id="verification-input-1">
+                  <input type="text" maxlength="1" class="verification-input" id="verification-input-2">
+                  <input type="text" maxlength="1" class="verification-input" id="verification-input-3">
+                  <input type="text" maxlength="1" class="verification-input" id="verification-input-4">
+                  <input type="text" maxlength="1" class="verification-input" id="verification-input-5">
+                  <input type="text" maxlength="1" class="verification-input" id="verification-input-6">
+              </div>
+              <div>
+                  <button id="verificationButton" class="settings-button">Верифікація</button>
+                  <button id="newVerificationCodeButton" class="settings-button">Надіслати лист</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+      <script src="../js/settings.js"></script>
+      <link rel="stylesheet" href="../style/settings-style.css">
+</body>
+</html>

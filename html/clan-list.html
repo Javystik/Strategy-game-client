@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/main-style.css">
+    <link rel="stylesheet" href="../style/clan-list.css">
+    <script src="../js/check-authentication.js"></script>
+    <title>Clans page</title>
+</head>
+<body>
+    <header>
+        <img src="../images/logo.png" alt="Логотип">
+
+        <div id="header-icons">
+            <img src="../images/settings.png">
+            <img src="../images/mail.png">
+            <a href="player-info-page.html">
+                <img src="../images/user.png">
+            </a>
+        </div>
+    </header>
+
+    <div>
+        <div class="container">
+            <a href="../html/main-page.html">
+                <button class="word">Ігри</button>
+            </a>
+            <a href="../html/rating-page.html">
+                <button class="word">Рейтинг</button>
+            </a>
+            <a href="../html/clan-list.html">
+                <button class="word">Альянс</button>
+            </a>
+            <a href="../html/news-page.html">
+                <button class="word">Новини</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <button id="createAllianseButton" class="word" style="font-size: 1.52rem">Створити клан</button>
+        
+        <button id="leaveAllianceButton" class="word" style="font-size: 1.52rem">Вийти з поточного клану</button>
+    </div>
+
+
+    <div class="container rating-container">
+        <div class="search-container">
+          <label for="playerName" class="search-label">Search by Name:</label>
+          <input type="text" id="playerName" class="search-input" placeholder="Enter alliance name...">
+        </div>
+    
+        <div class="search-container">
+          <label for="playerId" class="search-label">Search by ID:</label>
+          <input type="number" id="playerId" class="search-input" placeholder="Enter alliance ID...">
+        </div>
+      
+        <button onclick="generateAllianceTable()" class="settings-button">Search</button>
+      </div>
+    
+
+    <div class="container">
+        <table id="clansTable">
+            <thead>
+                <tr>
+                    <th>Clan ID</th>
+                    <th>Clan Name</th>
+                    <th>Clan Avatar</th>
+                    <th>Clan Tag</th>
+                    <th>Members Count</th>
+                    <th>Total Wins</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="container">    
+        <div class="pagination">
+            <button id="prevPage" onclick="previousPage()">Previous</button>
+            <span id="currentPage">Page 1</span>
+            <button id="nextPage" onclick="nextPage()">Next</button>
+        </div>
+    </div>
+
+    <script src="../js/clan-list.js"></script>
+
+    <div id="createClanModal" class="settings-modal">
+        <div class="settings-modal-content">
+            <span id="settingsClose" class="settings-close">&times;</span>
+            <h2>Створення клану</h2>
+            <div class="settings-setting">
+                <input type="text" id="clanName" class="settings-input" placeholder="Введіть назву клану...">
+            </div>
+            <div class="settings-setting">
+                <input type="text" id="clanTag" class="settings-input" placeholder="Введіть тег клану(до 5 символів)...">
+            </div>
+            <div class="settings-setting">
+                <button id="createClanBtn" class="settings-button">Створити клан</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/create-clan.js"></script>
+
+
+    <div id="leaveClanModal" class="settings-modal">
+        <div class="settings-modal-content">
+            <span id="settingsClose2" class="settings-close">&times;</span>
+            <h2>Вихід з клану</h2>
+            <div class="settings-setting">
+                <button id="leaveClanBtn" class="settings-button">Вийти з клану</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/clan-leave.js"></script>
+
+
+    <div id="settingsModal" class="settings-modal">
+        <div class="settings-modal-content">
+            <span class="settings-close" id="settings-close">&times;</span>
+            <h2>Налаштування</h2>
+            <div class="settings-setting">
+                <label for="passwordInput">Пароль:</label>
+                <input type="text" id="passwordInput" class="settings-input" placeholder="Введіть ваш новий пароль">
+            </div>
+            <div class="settings-setting">
+                <label for="emailInput">Електронна пошта:</label>
+                <input type="email" id="emailInput" class="settings-input" placeholder="Введіть вашу нову електронну пошту">
+            </div>
+            <div class="settings-setting">
+                <label>
+                    <input type="checkbox" id="musicToggle">
+                    Включити / виключити музику
+                </label>
+            </div>
+            <div class="settings-setting">
+                <button id="updateProfileBtn" class="settings-button">Оновити дані профіля</button>
+                <button id="logoutBtn" class="settings-button">Вийти з аккаунту</button>
+            </div>
+            <div class="settings-setting">
+                <h3>Генерація фейк користувачів</h3>
+                <label for="fakeUsersCount">Кількість:</label>
+                <input type="number" id="fakeUsersCount" class="settings-input" placeholder="Введіть кількість...">
+                <div>  
+                    <button id="generateFakeUsersBtn" class="settings-button">Генерувати</button>
+                </div>
+            </div>
+            <div>
+                <h3>Верифікація аккаунту</h3>
+                <div class="container">
+                    <input type="text" maxlength="1" class="verification-input" id="verification-input-1">
+                    <input type="text" maxlength="1" class="verification-input" id="verification-input-2">
+                    <input type="text" maxlength="1" class="verification-input" id="verification-input-3">
+                    <input type="text" maxlength="1" class="verification-input" id="verification-input-4">
+                    <input type="text" maxlength="1" class="verification-input" id="verification-input-5">
+                    <input type="text" maxlength="1" class="verification-input" id="verification-input-6">
+                </div>
+                <div>
+                    <button id="verificationButton" class="settings-button">Верифікація</button>
+                    <button id="newVerificationCodeButton" class="settings-button">Надіслати лист</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/settings.js"></script>
+      <link rel="stylesheet" href="../style/settings-style.css">
+</body>
+</html>

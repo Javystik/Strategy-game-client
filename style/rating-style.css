@@ -1,0 +1,78 @@
+.menu-container {
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.rating-container {
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+.pagination {
+    margin-top: 20px;
+    margin: auto;
+}
+
+.pagination button {
+    padding: 8px 16px;
+    margin: 0 4px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pagination button:hover {
+    background-color: #45a049;
+}
+
+.pagination span {
+    margin: 0 10px;
+}
+.search-container {
+    margin-bottom: 20px;
+}
+
+.search-label {
+    font-weight: bold;
+    color: #333;
+}
+
+.search-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #007bff;
+}
