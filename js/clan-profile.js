@@ -128,6 +128,9 @@ const setClanAvatar = (avatarBase64) => {
   };
 
   const setClanMembersTable = (clanMembers, leaderId) => {
+    const avatarBytes = member.avatarBytes;
+    const imageUrl = avatarBytes ? `data:image/jpeg;base64,${avatarBytes}` : '../images/user-avatar.jpg';
+    
     const tableBody = document.querySelector('#ratingTable tbody');
     tableBody.innerHTML = '';
     clanMembers.forEach(member => {
@@ -135,7 +138,7 @@ const setClanAvatar = (avatarBase64) => {
         const role = member.id === leaderId ? 'Лідер' : 'Учасник';
         row.innerHTML = `
             <td>${member.id}</td>
-            <td><img src="data:image/jpeg;base64,${member.avatarBytes}" alt="Avatar"></td>
+            <td><img src="${imageUrl}" alt="Avatar"></td>
             <td>${member.username}</td>
             <td>${role}</td>
             <td>${member.statisticDto.winGames}</td>
