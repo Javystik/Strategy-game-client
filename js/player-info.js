@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
             document.querySelector('.user-details p:nth-of-type(2)').textContent = "Дата реєстрації: " + formattedUserRegisteredDate;
 
             const base64Image = userData.avatarBytes;
-            const imageUrl = 'data:image/png;base64,' + base64Image;
+            const imageUrl = base64Image ? 'data:image/png;base64,' + base64Image : '../images/user-avatar.png';
 
             document.getElementById('user-avatar').src = imageUrl;
 
