@@ -98,8 +98,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 
 const setClanAvatar = (avatarBase64) => {
-  avatarImg.src = `data:image/jpeg;base64,${avatarBase64}`;
+  const imageUrl = avatarBase64 ? `data:image/jpeg;base64,${avatarBase64}` : '../images/user-avatar.png';
+  avatarImg.src = imageUrl;
 };
+
 
   const setClanStats = (clanStats) => {
     const statsSummary = document.querySelector('.stats-summary');
@@ -129,7 +131,7 @@ const setClanAvatar = (avatarBase64) => {
 
   const setClanMembersTable = (clanMembers, leaderId) => {
     const avatarBytes = member.avatarBytes;
-    const imageUrl = avatarBytes ? `data:image/jpeg;base64,${avatarBytes}` : '../images/user-avatar.jpg';
+    const imageUrl = avatarBytes ? `data:image/jpeg;base64,${avatarBytes}` : '../images/user-avatar.png';
     
     const tableBody = document.querySelector('#ratingTable tbody');
     tableBody.innerHTML = '';
