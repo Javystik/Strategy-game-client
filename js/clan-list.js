@@ -59,11 +59,13 @@ function displayInitialClans(clans, currentPage) {
   }
 
   clans.forEach(clan => {
+    const avatarSrc = clan.avatarBytes ? `data:image/png;base64,${clan.avatarBytes}` : '../images/clan-avatar.png';
+    
     const row = `
       <tr onclick="redirectToClanProfile(${clan.id})">
         <td>${clan.id}</td>
         <td>${clan.name}</td>
-        <td><img src="data:image/png;base64,${clan.avatarBytes}" style="height: 80px"></td>
+        <td><img src="${avatarSrc}" style="height: 80px"></td>
         <td>${clan.tag}</td>
         <td>${clan.membersCount}</td>
         <td>${clan.totalWins}</td>
